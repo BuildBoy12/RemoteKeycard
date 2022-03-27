@@ -1,15 +1,22 @@
-﻿using System.Linq;
-using CustomPlayerEffects;
-using Exiled.API.Features;
-using Exiled.API.Features.Items;
-using Interactables.Interobjects.DoorUtils;
+﻿// -----------------------------------------------------------------------
+// <copyright file="Extensions.cs" company="Build">
+// Copyright (c) Build. All rights reserved.
+// Licensed under the CC BY-SA 3.0 license.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace RemoteKeycard.API.Extensions
+namespace RemoteKeycard
 {
+    using System.Linq;
+    using CustomPlayerEffects;
+    using Exiled.API.Features;
+    using Exiled.API.Features.Items;
+    using Interactables.Interobjects.DoorUtils;
+
     /// <summary>
     /// A set of extensions used in this plugin.
     /// </summary>
-    public static class PlayerExtensions
+    public static class Extensions
     {
         /// <summary>
         /// Checks whether the player has a keycard of a specific permission.
@@ -20,7 +27,7 @@ namespace RemoteKeycard.API.Extensions
         /// <returns>Whether the player has the required keycard.</returns>
         public static bool HasKeycardPermission(this Player player, KeycardPermissions permissions, bool requiresAllPermissions = false)
         {
-            if (RemoteKeycard.Instance.Config.AmnesiaMatters && player.GetEffectActive<Amnesia>())
+            if (Plugin.Instance.Config.AmnesiaMatters && player.GetEffectActive<Amnesia>())
                 return false;
 
             return requiresAllPermissions ?

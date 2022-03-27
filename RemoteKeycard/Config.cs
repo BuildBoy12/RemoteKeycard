@@ -1,8 +1,15 @@
-﻿using System.ComponentModel;
-using Exiled.API.Interfaces;
+﻿// -----------------------------------------------------------------------
+// <copyright file="Config.cs" company="Build">
+// Copyright (c) Build. All rights reserved.
+// Licensed under the CC BY-SA 3.0 license.
+// </copyright>
+// -----------------------------------------------------------------------
 
-namespace RemoteKeycard.Config
+namespace RemoteKeycard
 {
+    using System.ComponentModel;
+    using Exiled.API.Interfaces;
+
     /// <summary>
     /// The plugin's main config file.
     /// </summary>
@@ -12,37 +19,33 @@ namespace RemoteKeycard.Config
         public bool IsEnabled { get; set; } = true;
 
         /// <summary>
-        /// Whether Amnesia affects the usage of keycards.
+        /// Gets or sets a value indicating whether Amnesia affects the usage of keycards.
         /// </summary>
         [Description("Whether  Amnesia affects the usage of keycards.")]
         public bool AmnesiaMatters { get; set; } = true;
 
         /// <summary>
-        /// Whether this plugin works on generators.
+        /// Gets or sets a value indicating whether this plugin works on generators.
         /// </summary>
         [Description("Whether this plugin works on generators.")]
         public bool AffectGenerators { get; set; } = true;
 
         /// <summary>
-        /// Whether this plugin works on Warhead's panel.
+        /// Gets or sets a value indicating whether this plugin works on Warhead's panel.
         /// </summary>
         [Description("Whether this plugin works on Warhead's panel.")]
         public bool AffectWarheadPanel { get; set; } = true;
 
         /// <summary>
-        /// Whether this plugin works on SCP lockers.
+        /// Gets or sets a value indicating whether this plugin works on SCP lockers.
         /// </summary>
         [Description("Whether this plugin works on SCP lockers.")]
         public bool AffectScpLockers { get; set; } = true;
 
         /// <summary>
-        /// Whether this plugin works on doors.
+        /// Gets or sets a value indicating whether this plugin works on doors.
         /// </summary>
         [Description("Whether this plugin works on doors.")]
         public bool AffectDoors { get; set; } = true;
-
-        /// <inheritdoc cref="ExtraSettings" path="//*[not(self::remarks)]"/>
-        [Description("These are some extra settings, mainly for developers, testing and curious people.")]
-        public ExtraSettings Extras { get; set; } = new ExtraSettings();
     }
 }
